@@ -1,0 +1,540 @@
+🌹  mkdir memory-game
+🌹  cd memory-game
+🌹  touch index.html styles.css scripts.js
+🌹  mkdir img
+
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Jogo da Memória</title>
+
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <script src="./scripts.js"></script>
+</body>
+</html>
+
+<div class="memory-card">
+  <img class="front-face" src="img/react.svg" alt="Face da Carta">
+  <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+</div>
+
+<!-- index.html -->
+<section class="memory-game">
+  <div class="memory-card">
+    <img class="front-face" src="img/react.svg" alt="Face da Carta">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+
+  <div class="memory-card">
+    <img class="front-face" src="img/react.svg" alt="Face da Carta">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+
+  <div class="memory-card">
+    <img class="front-face" src="img/angular.svg" alt="Face da Carta">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+
+  <div class="memory-card">
+    <img class="front-face" src="img/angular.svg" alt="Face da Carta">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+
+  <div class="memory-card">
+    <img class="front-face" src="img/ember.svg" alt="Face da Carta">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+
+  <div class="memory-card">
+    <img class="front-face" src="img/ember.svg" alt="Face da Carta">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+
+  <div class="memory-card">
+    <img class="front-face" src="img/vue.svg" alt="Face da Carta">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+
+  <div class="memory-card">
+    <img class="front-face" src="img/vue.svg" alt="Face da Carta">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+
+  <div class="memory-card">
+    <img class="front-face" src="img/backbone.svg" Face da Carta="Backbone">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+
+  <div class="memory-card">
+    <img class="front-face" src="img/backbone.svg" Face da Carta="Backbone">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+
+  <div class="memory-card">
+    <img class="front-face" src="img/aurelia.svg" alt="Face da Carta">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+
+  <div class="memory-card">
+    <img class="front-face" src="img/aurelia.svg" alt="Face da Carta">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+</section>
+
+/* styles.css */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* styles.css */
+
+body {
+  height: 100vh;
+  display: flex;
+  background: #060AB2;
+}
+
+.memory-game {
+  width: 640px;
+  height: 640px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* styles.css */
+
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  border-radius: 5px;
+  background: #1C7CCC;
+}
+
+
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  transform-style: preserve-3d;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, .3);
+ transform: scale(1);
+}
+
+ .memory-card:active {
+   transform: scale(0.97);
+   transition: transform .2s;
+ }
+ 
+ 
+ // scripts.js
+const cards = document.querySelectorAll('.memory-card');
+
+function flipCard() {
+  this.classList.toggle('flip');
+}
+
+cards.forEach(card => card.addEventListener('click', flipCard));
+
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+/* styles.css */
+
+.memory-game {
+  width: 640px;
+  height: 640px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+ perspective: 1000px;
+}
+
+/* styles.css */
+
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  transform: scale(1);
+ transform-style: preserve-3d;
+}
+
+/* styles.css */
+
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  transform: scale(1);
+  transform-style: preserve-3d;
+ transition: transform .5s;
+}
+
+
+/* styles.css */
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  border-radius: 5px;
+  background: #1C7CCC;
+ backface-visibility: hidden;
+}
+
+front-face {
+  transform: rotateY(180deg);
+}
+
+
+ // scritps.js
+
+  const cards = document.querySelectorAll('.memory-card');
+
+ let hasFlippedCard = false;
+ let firstCard, secondCard;
+
+  function flipCard() {
+   this.classList.toggle('flip');
+   this.classList.add('flip');
+
+   if (!hasFlippedCard) {
+     hasFlippedCard = true;
+     firstCard = this;
+   }
+  }
+
+cards.forEach(card => card.addEventListener('click', flipCard));
+
+<!-- index.html -->
+
+<section class="memory-game">
+ <div class="memory-card" data-framework="react">
+    <img class="front-face" src="img/react.svg" alt="Face da Carta">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+
+ <div class="memory-card" data-framework="react">
+    <img class="front-face" src="img/react.svg" alt="Face da Carta">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+
+ <div class="memory-card" data-framework="angular">
+    <img class="front-face" src="img/angular.svg" alt="Face da Carta">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+
+ <div class="memory-card" data-framework="angular">
+    <img class="front-face" src="img/angular.svg" alt="Face da Carta">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+
+ <div class="memory-card" data-framework="ember">
+    <img class="front-face" src="img/ember.svg" alt="Face da Carta">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+
+ <div class="memory-card" data-framework="ember">
+    <img class="front-face" src="img/ember.svg" alt="Face da Carta">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+
+ <div class="memory-card" data-framework="vue">
+    <img class="front-face" src="img/vue.svg" alt="Face da Carta">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+
+ <div class="memory-card" data-framework="vue">
+    <img class="front-face" src="img/vue.svg" alt="Face da Carta">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+
+ <div class="memory-card" data-framework="backbone">
+    <img class="front-face" src="img/backbone.svg" Face da Carta="Backbone">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+
+ <div class="memory-card" data-framework="backbone">
+    <img class="front-face" src="img/backbone.svg" Face da Carta="Backbone">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+
+ <div class="memory-card" data-framework="aurelia">
+    <img class="front-face" src="img/aurelia.svg" alt="Face da Carta">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+
+ <div class="memory-card" data-framework="aurelia">
+    <img class="front-face" src="img/aurelia.svg" alt="Face da Carta">
+    <img class="back-face" src="img/js-badge.svg" alt="Verso da Carta">
+  </div>
+</section>
+
+ // scritps.js
+
+  const cards = document.querySelectorAll('.memory-card');
+
+  let hasFlippedCard = false;
+  let firstCard, secondCard;
+
+  function flipCard() {
+    this.classList.add('flip');
+
+    if (!hasFlippedCard) {
+      hasFlippedCard = true;
+      firstCard = this;
+     return;
+   }
+
+   secondCard = this;
+   hasFlippedCard = false;
+
+   checkForMatch();
+ }
+
+ function checkForMatch() {
+   if (firstCard.dataset.framework === secondCard.dataset.framework) {
+     disableCards();
+     return;
+   }
+
+   unflipCards();
+ }
+
+ function disableCards() {
+   firstCard.removeEventListener('click', flipCard);
+   secondCard.removeEventListener('click', flipCard);
+ }
+
+ function unflipCards() {
+   setTimeout(() => {
+     firstCard.classList.remove('flip');
+     secondCard.classList.remove('flip');
+   }, 1500);
+ }
+
+  cards.forEach(card => card.addEventListener('click', flipCard));
+  
+  // scritps.js
+
+ if (firstCard.dataset.framework === secondCard.dataset.framework) {
+   disableCards();
+   return;
+ }
+
+ unflipCards();
+
+ let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+ isMatch ? disableCards() : unflipCards();
+ 
+ 
+   // scritps.js
+
+  const cards = document.querySelectorAll('.memory-card');
+
+  let hasFlippedCard = false;
+ let lockBoard = false;
+  let firstCard, secondCard;
+
+  function flipCard() {
+   if (lockBoard) return;
+    this.classList.add('flip');
+
+    if (!hasFlippedCard) {
+      hasFlippedCard = true;
+      firstCard = this;
+      return;
+    }
+
+    secondCard = this;
+    hasFlippedCard = false;
+
+    checkForMatch();
+  }
+
+  function checkForMatch() {
+    let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+    isMatch ? disableCards() : unflipCards();
+  }
+
+  function disableCards() {
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+  }
+
+  function unflipCards() {
+     lockBoard = true;
+
+    setTimeout(() => {
+      firstCard.classList.remove('flip');
+      secondCard.classList.remove('flip');
+
+     lockBoard = false;
+    }, 1500);
+  }
+
+  cards.forEach(card => card.addEventListener('click', flipCard));
+
+if (this === firstCard) return;
+
+function resetBoard() {
+  [hasFlippedCard, lockBoard] = [false, false];
+  [firstCard, secondCard] = [null, null];
+}
+
+// scritps.js
+
+  const cards = document.querySelectorAll('.memory-card');
+
+  let hasFlippedCard = false;
+  let lockBoard = false;
+  let firstCard, secondCard;
+
+  function flipCard() {
+    if (lockBoard) return;
+   if (this === firstCard) return;
+
+    this.classList.add('flip');
+
+    if (!hasFlippedCard) {
+      hasFlippedCard = true;
+      firstCard = this;
+      return;
+    }
+
+    secondCard = this;
+   hasFlippedCard = false;
+
+    checkForMatch();
+  }
+
+  function checkForMatch() {
+    let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+    isMatch ? disableCards() : unflipCards();
+  }
+
+  function disableCards() {
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+
+   resetBoard();
+  }
+
+  function unflipCards() {
+    lockBoard = true;
+
+    setTimeout(() => {
+      firstCard.classList.remove('flip');
+      secondCard.classList.remove('flip');
+
+     lockBoard = false;
+     resetBoard();
+    }, 1500);
+  }
+
+ function resetBoard() {
+   [hasFlippedCard, lockBoard] = [false, false];
+   [firstCard, secondCard] = [null, null];
+ }
+
+  cards.forEach(card => card.addEventListener('click', flipCard));
+  
+  
+  function shuffle() {
+  cards.forEach(card => {
+    let ramdomPos = Math.floor(Math.random() * 12);
+    card.style.order = ramdomPos;
+  });
+}
+
+// scritps.js
+
+  const cards = document.querySelectorAll('.memory-card');
+
+  let hasFlippedCard = false;
+  let lockBoard = false;
+  let [firstCard, ], secondCard;
+
+  function flipCard() {
+    if (lockBoard) return;
+    if (this === firstCard) return;
+
+    this.classList.add('flip');
+
+    if (!hasFlippedCard) {
+      hasFlippedCard = true;
+      firstCard = this;
+      return;
+    }
+
+    secondCard = this;
+    lockBoard = true;
+
+    checkForMatch();
+  }
+
+  function checkForMatch() {
+    let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+    isMatch ? disableCards() : unflipCards();
+  }
+
+  function disableCards() {
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+
+    resetBoard();
+  }
+
+  function unflipCards() {
+    setTimeout(() => {
+      firstCard.classList.remove('flip');
+      secondCard.classList.remove('flip');
+
+      resetBoard();
+    }, 1500);
+  }
+
+  function resetBoard() {
+    [hasFlippedCard, lockBoard] = [false, false];
+    [firstCard, secondCard] = [null, null];
+  }
+
+ (function shuffle() {
+   cards.forEach(card => {
+     let ramdomPos = Math.floor(Math.random() * 12);
+     card.style.order = ramdomPos;
+   });
+ })();
+
+  cards.forEach(card => card.addEventListener('click', flipCard));
+
